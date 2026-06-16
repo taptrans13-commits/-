@@ -157,6 +157,7 @@ img {
   align-items: center;
   justify-content: center;
   min-height: 46px;
+  width: fit-content;
   padding: 12px 18px;
   border: 1px solid transparent;
   border-radius: 8px;
@@ -407,6 +408,7 @@ select,
 textarea {
   width: 100%;
   min-height: 46px;
+  height: 46px;
   padding: 10px 12px;
   color: var(--ink);
   background: var(--white);
@@ -415,7 +417,15 @@ textarea {
   outline: none;
 }
 
+select {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
 textarea {
+  height: auto;
+  min-height: 126px;
   resize: vertical;
 }
 
@@ -494,31 +504,84 @@ textarea:focus {
 
 .quantity-tool {
   display: grid;
-  grid-template-columns: minmax(240px, 0.35fr) minmax(0, 1fr);
-  gap: 20px;
-  align-items: end;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  align-items: stretch;
   margin-top: 18px;
   padding: 22px;
   background: rgba(255, 255, 255, 0.08);
 }
 
+.quantity-tool > div:first-child {
+  display: grid;
+  max-width: 720px;
+  align-content: start;
+}
+
+.quantity-tool h3 {
+  margin-bottom: 0;
+}
+
 .quantity-controls {
   display: grid;
-  grid-template-columns: minmax(260px, 1fr) 120px 160px auto;
-  gap: 12px;
-  align-items: end;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 14px;
+  align-items: stretch;
+}
+
+.quantity-controls label,
+.quantity-sum,
+.quantity-action {
+  display: grid;
+  grid-template-rows: minmax(18px, auto) 46px;
+  gap: 7px;
 }
 
 .quantity-sum {
-  min-height: 46px;
-  padding: 8px 12px;
-  color: var(--ink);
-  background: var(--white);
-  border-radius: 8px;
+  min-height: 0;
+  padding: 0;
+  color: inherit;
+  background: transparent;
+  border-radius: 0;
+}
+
+.quantity-controls .quantity-sum span {
+  color: inherit;
+  font-size: 14px;
+  font-weight: 780;
+  text-transform: none;
 }
 
 .quantity-sum strong {
-  font-size: 20px;
+  display: flex;
+  align-items: center;
+  min-height: 46px;
+  height: 46px;
+  padding: 10px 12px;
+  color: var(--ink);
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-size: 18px;
+  line-height: 1.1;
+  white-space: nowrap;
+}
+
+.quantity-action span {
+  display: block;
+  height: 21px;
+  min-height: 0;
+  font-size: 14px;
+  line-height: 21px;
+  visibility: hidden;
+}
+
+.quantity-action .button {
+  width: 100%;
+  min-height: 0;
+  height: 46px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 .price-controls {
@@ -694,7 +757,7 @@ address {
   }
 
   .quantity-controls {
-    grid-template-columns: 1fr 140px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
