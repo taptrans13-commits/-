@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 950 820" role="img" aria-labelledby="title">
+  <title id="title">Нагревательный кабель и монтажные элементы</title>
+  <rect width="950" height="820" fill="#f4f5f3"/>
+  <g transform="translate(70 70)">
+    <rect width="810" height="160" rx="22" fill="#fff" stroke="#d8dee2"/>
+    <path d="M80 95h255" stroke="#c8cdd0" stroke-width="54" stroke-linecap="round"/>
+    <path d="M210 95h265" stroke="#202326" stroke-width="38" stroke-linecap="round"/>
+    <path d="M260 95h150" stroke="#d82335" stroke-width="20" stroke-linecap="round"/>
+    <circle cx="620" cy="95" r="32" fill="#9c3140"/>
+    <circle cx="700" cy="95" r="32" fill="#9c3140"/>
+    <rect x="540" y="55" width="52" height="80" rx="10" fill="#f28c28"/>
+  </g>
+  <g transform="translate(70 305)">
+    <rect width="810" height="160" rx="22" fill="#fff" stroke="#d8dee2"/>
+    <path d="M55 85h700" stroke="#1e2125" stroke-width="28" stroke-linecap="round"/>
+    <path d="M70 85h280" stroke="#d82335" stroke-width="17" stroke-linecap="round"/>
+    <path d="M360 85h115" stroke="#111316" stroke-width="52" stroke-linecap="round"/>
+  </g>
+  <g transform="translate(70 540)">
+    <rect width="810" height="190" rx="22" fill="#fff" stroke="#d8dee2"/>
+    <path d="M210 95c0-58 250-58 250 0s-250 58-250 0z" fill="none" stroke="#202326" stroke-width="34"/>
+    <path d="M214 95c0-54 242-54 242 0" fill="none" stroke="#d82335" stroke-width="12"/>
+    <path d="M590 42h92v106h-92z" fill="#d8dee2"/>
+    <path d="M628 32h16v126h-16z" fill="#202326"/>
+  </g>
+</svg>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 560" role="img" aria-labelledby="title">
+  <title id="title">Греющий кабель внутри трубы</title>
+  <defs>
+    <linearGradient id="pipe" x1="0" x2="1">
+      <stop offset="0" stop-color="#dce3e7"/>
+      <stop offset="0.45" stop-color="#828b92"/>
+      <stop offset="0.72" stop-color="#f8fbfc"/>
+      <stop offset="1" stop-color="#7a8389"/>
+    </linearGradient>
+    <radialGradient id="inner" cx="45%" cy="50%" r="55%">
+      <stop offset="0" stop-color="#d82335" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#30363b"/>
+    </radialGradient>
+  </defs>
+  <rect width="760" height="560" fill="#f3f4f2"/>
+  <g transform="translate(90 100)">
+    <path d="M0 92 385 0v360L0 268z" fill="url(#pipe)"/>
+    <ellipse cx="385" cy="180" rx="132" ry="180" fill="url(#pipe)"/>
+    <ellipse cx="385" cy="180" rx="102" ry="142" fill="url(#inner)"/>
+    <path d="M392 184 585 252" stroke="#d82335" stroke-width="24" stroke-linecap="round"/>
+    <path d="M554 242 655 278" stroke="#202326" stroke-width="30" stroke-linecap="round"/>
+  </g>
+</svg>

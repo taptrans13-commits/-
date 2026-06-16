@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 140" role="img" aria-labelledby="title">
+  <title id="title">ТЕХНОПРОГРЕСС</title>
+  <rect width="760" height="140" fill="none"/>
+  <g fill="#f04" transform="translate(14 20)">
+    <circle cx="18" cy="18" r="16"/>
+    <circle cx="64" cy="18" r="16"/>
+    <circle cx="18" cy="64" r="16"/>
+    <circle cx="64" cy="64" r="16"/>
+  </g>
+  <text x="112" y="61" fill="#fff" font-family="Arial, sans-serif" font-size="43" font-weight="900" letter-spacing="0">TECHNOPROGRESS</text>
+  <text x="114" y="96" fill="#fff" font-family="Arial, sans-serif" font-size="20" font-weight="800" letter-spacing="0.04em">КАБЕЛЬНО-ПРОВОДНИКОВАЯ ПРОДУКЦИЯ</text>
+</svg>
