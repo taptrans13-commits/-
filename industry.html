@@ -46,6 +46,25 @@
         </div>
       </section>
 
+      <section class="section guide-section">
+        <div class="section-inner guide-grid">
+          <article>
+            <p class="section-kicker">Подбор</p>
+            <h2>Что важно для промышленного электрообогрева</h2>
+            <p>Промышленная комплектация зависит от температурного режима, среды, длины трасс, питания и требований к исполнению. Поэтому кабель, муфты, коробки и автоматика подбираются как система.</p>
+          </article>
+          <article class="note-panel">
+            <h3>Для расчета понадобятся</h3>
+            <ul class="check-list">
+              <li>Длина и назначение технологической линии</li>
+              <li>Минимальная и рабочая температура</li>
+              <li>Материал трубы или резервуара и утепление</li>
+              <li>Требования к промышленному или EX-исполнению</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
       <section class="section catalog-section" id="catalog">
         <div class="section-inner">
           <div class="section-head">
@@ -53,8 +72,18 @@
             <h2>Карточки товаров</h2>
             <p>Полные наименования из прайса, артикулы, маркировки и цены с НДС. Наличие и итоговый состав поставки менеджер подтверждает по заявке.</p>
           </div>
-          <div class="catalog-controls one-control">
+          <div class="catalog-controls direction-controls">
             <label>Поиск <input id="catalogSearch" type="search" placeholder="Артикул, маркировка, название"></label>
+            <label>Категория <select id="catalogCategoryFilter"></select></label>
+            <label>
+              Сортировка
+              <select id="catalogSort">
+                <option value="default">По группам</option>
+                <option value="price-asc">Сначала дешевле</option>
+                <option value="price-desc">Сначала дороже</option>
+                <option value="name">По названию</option>
+              </select>
+            </label>
           </div>
           <div class="catalog-count" id="catalogCount">0 позиций</div>
           <div class="catalog-grid" id="catalogGrid"></div>

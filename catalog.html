@@ -8,6 +8,19 @@
     <link rel="stylesheet" href="styles.css">
     <script src="data/products.js" defer></script>
     <script src="catalog.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "name": "Каталог продукции ТЕХНОПРОГРЕСС",
+        "url": "https://taptrans13-commits.github.io/-/catalog.html",
+        "isPartOf": {
+          "@type": "WebSite",
+          "name": "ТЕХНОПРОГРЕСС",
+          "url": "https://taptrans13-commits.github.io/-/"
+        }
+      }
+    </script>
   </head>
   <body class="inner-page catalog-page" data-catalog-type="all">
     <header class="site-header">
@@ -54,6 +67,16 @@
           <div class="catalog-controls">
             <label>Поиск <input id="catalogSearch" type="search" placeholder="Артикул, маркировка, название"></label>
             <label>Группа <select id="catalogGroupFilter"></select></label>
+            <label>Категория <select id="catalogCategoryFilter"></select></label>
+            <label>
+              Сортировка
+              <select id="catalogSort">
+                <option value="default">По группам</option>
+                <option value="price-asc">Сначала дешевле</option>
+                <option value="price-desc">Сначала дороже</option>
+                <option value="name">По названию</option>
+              </select>
+            </label>
           </div>
           <div class="catalog-count" id="catalogCount">0 позиций</div>
           <div class="catalog-grid" id="catalogGrid"></div>

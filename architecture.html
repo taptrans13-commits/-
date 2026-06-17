@@ -46,6 +46,25 @@
         </div>
       </section>
 
+      <section class="section guide-section">
+        <div class="section-inner guide-grid">
+          <article>
+            <p class="section-kicker">Подбор</p>
+            <h2>Как рассчитать кровлю, водостоки и трубы</h2>
+            <p>Для антиобледенения считают длину желобов, труб, воронок и опасных участков кровли. Для трубопровода важны длина, диаметр, утепление и способ монтажа кабеля.</p>
+          </article>
+          <article class="note-panel">
+            <h3>Для расчета понадобятся</h3>
+            <ul class="check-list">
+              <li>Длина желобов, водостоков, ендов или труб</li>
+              <li>Количество нитей кабеля на каждом участке</li>
+              <li>Наружный или внутренний монтаж на трубе</li>
+              <li>Нужны ли коробки, муфты, крепеж и автоматика</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
       <section class="section catalog-section" id="catalog">
         <div class="section-inner">
           <div class="section-head">
@@ -53,8 +72,18 @@
             <h2>Карточки товаров</h2>
             <p>Полные наименования из прайса, артикулы, маркировки и цены с НДС. Наличие и итоговый состав поставки менеджер подтверждает по заявке.</p>
           </div>
-          <div class="catalog-controls one-control">
+          <div class="catalog-controls direction-controls">
             <label>Поиск <input id="catalogSearch" type="search" placeholder="Артикул, маркировка, название"></label>
+            <label>Категория <select id="catalogCategoryFilter"></select></label>
+            <label>
+              Сортировка
+              <select id="catalogSort">
+                <option value="default">По группам</option>
+                <option value="price-asc">Сначала дешевле</option>
+                <option value="price-desc">Сначала дороже</option>
+                <option value="name">По названию</option>
+              </select>
+            </label>
           </div>
           <div class="catalog-count" id="catalogCount">0 позиций</div>
           <div class="catalog-grid" id="catalogGrid"></div>

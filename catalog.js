@@ -91,16 +91,46 @@
       .join("");
   }
 
-  function selectedProducts() {
+  function baseProducts() {
     const pageType = document.body.dataset.catalogType || "all";
-    const query = ($("#catalogSearch")?.value || "").trim().toLowerCase();
     const groupFilter = $("#catalogGroupFilter")?.value || "all";
     return products.filter((item) => {
       const inPage = pageType === "all" || item.type === pageType;
       const inFilter = groupFilter === "all" || item.type === groupFilter;
-      const haystack = `${item.article} ${item.name} ${item.marking} ${item.group} ${item.category}`.toLowerCase();
-      return inPage && inFilter && (!query || haystack.includes(query));
+      return inPage && inFilter;
     });
+  }
+
+  function fillCategoryFilter() {
+    const filter = $("#catalogCategoryFilter");
+    if (!filter) return;
+
+    const current = filter.value;
+    const categoryNames = Array.from(new Set(baseProducts().map((item) => item.category)))
+      .filter(Boolean)
+      .sort((a, b) => a.localeCompare(b, "ru"));
+
+    filter.innerHTML = '<option value="all">Все категории</option>' + categoryNames
+      .map((categoryName) => `<option value="${escapeHtml(categoryName)}">${escapeHtml(categoryName)}</option>`)
+      .join("");
+
+    if (categoryNames.includes(current)) filter.value = current;
+  }
+
+  function selectedProducts() {
+    const query = ($("#catalogSearch")?.value || "").trim().toLowerCase();
+    const categoryFilter = $("#catalogCategoryFilter")?.value || "all";
+    const sortMode = $("#catalogSort")?.value || "default";
+    const rows = baseProducts().filter((item) => {
+      const inCategory = categoryFilter === "all" || item.category === categoryFilter;
+      const haystack = `${item.article} ${item.name} ${item.marking} ${item.group} ${item.category}`.toLowerCase();
+      return inCategory && (!query || haystack.includes(query));
+    });
+
+    if (sortMode === "price-asc") return rows.sort((a, b) => Number(a.priceNds || 0) - Number(b.priceNds || 0));
+    if (sortMode === "price-desc") return rows.sort((a, b) => Number(b.priceNds || 0) - Number(a.priceNds || 0));
+    if (sortMode === "name") return rows.sort((a, b) => String(a.name || "").localeCompare(String(b.name || ""), "ru"));
+    return rows;
   }
 
   function renderCatalog() {
@@ -160,12 +190,18 @@
 
   function bindEvents() {
     $("#catalogSearch")?.addEventListener("input", renderCatalog);
-    $("#catalogGroupFilter")?.addEventListener("input", renderCatalog);
+    $("#catalogGroupFilter")?.addEventListener("input", () => {
+      fillCategoryFilter();
+      renderCatalog();
+    });
+    $("#catalogCategoryFilter")?.addEventListener("input", renderCatalog);
+    $("#catalogSort")?.addEventListener("input", renderCatalog);
   }
 
   function init() {
     renderGroupCards();
     fillGroupFilter();
+    fillCategoryFilter();
     bindEvents();
     renderCatalog();
   }
