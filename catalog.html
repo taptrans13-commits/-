@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Каталог ТЕХНОПРОГРЕСС - товары и цены с НДС</title>
+    <meta name="description" content="Полный каталог продукции ТЕХНОПРОГРЕСС: теплые полы, кровельный обогрев, трубопроводы, промышленные кабели, терморегуляторы и комплектующие с ценами с НДС.">
+    <link rel="stylesheet" href="styles.css">
+    <script src="data/products.js" defer></script>
+    <script src="catalog.js" defer></script>
+  </head>
+  <body class="inner-page catalog-page" data-catalog-type="all">
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="ТЕХНОПРОГРЕСС">
+        <img src="assets/logo-black.svg" alt="ТЕХНОПРОГРЕСС">
+      </a>
+      <nav class="nav-links" aria-label="Основная навигация">
+        <a class="" href="index.html">Главная</a><a class="active" href="catalog.html">Каталог</a><a class="" href="floor.html">Теплые полы</a><a class="" href="architecture.html">Кровля и трубы</a><a class="" href="industry.html">Промобогрев</a><a class="" href="contacts.html">Контакты</a>
+      </nav>
+      <a class="header-phone" href="tel:+73422071020" aria-label="Позвонить в ТЕХНОПРОГРЕСС">+7 342 207-10-20</a>
+    </header>
+    <main id="top">
+      <section class="page-hero catalog-hero">
+        <div class="section-inner page-hero-inner">
+          <p class="eyebrow">Полный каталог</p>
+          <h1>Каталог продукции с ценами с НДС</h1>
+          <p>302 позиции из актуального прайса: полные наименования, артикулы, маркировки, единицы отгрузки и карточки по группам применения.</p>
+          <div class="hero-actions">
+            <a class="button primary" href="#catalog">Смотреть товары</a>
+            <a class="button light" href="tel:+73422071020">Позвонить</a>
+            <a class="button ghost" href="index.html#calculator">Рассчитать объем</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="section catalog-overview">
+        <div class="section-inner">
+          <div class="section-head compact">
+            <p class="section-kicker">Группы</p>
+            <h2>Подбор по задаче объекта</h2>
+            <p>Каждая группа содержит описание применения и карточки товаров из прайса.</p>
+          </div>
+          <div class="catalog-group-cards" id="catalogGroupCards"></div>
+        </div>
+      </section>
+
+      <section class="section catalog-section" id="catalog">
+        <div class="section-inner">
+          <div class="section-head">
+            <p class="section-kicker">Карточки товаров</p>
+            <h2>Продукция по группам и категориям</h2>
+            <p>Используйте поиск по артикулу, маркировке или названию. В карточках указана прайсовая цена с НДС.</p>
+          </div>
+          <div class="catalog-controls">
+            <label>Поиск <input id="catalogSearch" type="search" placeholder="Артикул, маркировка, название"></label>
+            <label>Группа <select id="catalogGroupFilter"></select></label>
+          </div>
+          <div class="catalog-count" id="catalogCount">0 позиций</div>
+          <div class="catalog-grid" id="catalogGrid"></div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div>
+        <img src="assets/logo-white.svg" alt="ТЕХНОПРОГРЕСС">
+        <p>Электрообогрев, кабель, комплектующие и промышленная комплектация.</p>
+      </div>
+      <div>
+        <a href="tel:+73422071020">+7 342 207-10-20</a>
+        <a href="mailto:Head-tp@yandex.ru">Head-tp@yandex.ru</a>
+      </div>
+    </footer>
+  </body>
+</html>

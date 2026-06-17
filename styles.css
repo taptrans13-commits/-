@@ -69,16 +69,18 @@ img {
 .nav-links {
   display: flex;
   justify-content: center;
-  gap: 24px;
+  gap: clamp(10px, 1.35vw, 22px);
   color: #3c4247;
-  font-size: 15px;
+  font-size: 14px;
 }
 
 .nav-links a {
   padding: 8px 0;
+  white-space: nowrap;
 }
 
 .nav-links a:hover,
+.nav-links a.active,
 .header-phone:hover,
 .contact-stack a:hover {
   color: var(--red);
@@ -99,6 +101,48 @@ img {
   background:
     linear-gradient(90deg, rgba(28, 29, 31, 0.96) 0%, rgba(28, 29, 31, 0.78) 45%, rgba(28, 29, 31, 0.28) 100%),
     url("assets/roof-architecture.svg") center right / cover no-repeat;
+}
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+  color: var(--white);
+  background:
+    linear-gradient(90deg, rgba(28, 29, 31, 0.97), rgba(28, 29, 31, 0.78)),
+    url("assets/roof-architecture.svg") center / cover no-repeat;
+}
+
+.page-hero-inner {
+  padding: clamp(76px, 9vw, 124px) 0 clamp(64px, 7vw, 92px);
+}
+
+.page-hero h1 {
+  max-width: 940px;
+  margin: 0;
+  font-size: clamp(42px, 6vw, 78px);
+  line-height: 0.96;
+  letter-spacing: 0;
+}
+
+.page-hero p:not(.eyebrow) {
+  max-width: 760px;
+  margin: 24px 0 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: clamp(18px, 2vw, 23px);
+}
+
+.split-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(280px, 0.75fr);
+  gap: clamp(24px, 5vw, 70px);
+  align-items: center;
+}
+
+.split-hero-grid img {
+  width: 100%;
+  height: min(360px, 42vw);
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .hero::after {
@@ -306,6 +350,236 @@ h3 {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 16px;
+}
+
+.catalog-overview {
+  background: var(--white);
+}
+
+.catalog-group-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.catalog-group-card {
+  overflow: hidden;
+  display: grid;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.catalog-group-card img {
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+  background: var(--steel);
+}
+
+.catalog-group-card div {
+  display: grid;
+  gap: 10px;
+  padding: 18px;
+}
+
+.catalog-group-card span,
+.catalog-count,
+.product-article,
+.product-unit {
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.catalog-group-card p,
+.category-head p,
+.product-card p,
+.contact-card address {
+  color: var(--muted);
+}
+
+.catalog-group-card a {
+  color: var(--red);
+  font-weight: 850;
+}
+
+.catalog-controls {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(220px, 300px);
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.catalog-controls.one-control {
+  grid-template-columns: minmax(0, 620px);
+}
+
+.catalog-count {
+  margin-bottom: 18px;
+}
+
+.catalog-group-section {
+  display: grid;
+  gap: 28px;
+}
+
+.catalog-group-section + .catalog-group-section {
+  margin-top: clamp(44px, 6vw, 76px);
+}
+
+.category-block {
+  display: grid;
+  gap: 16px;
+}
+
+.category-block + .category-block {
+  padding-top: 24px;
+  border-top: 1px solid var(--line);
+}
+
+.category-head {
+  display: grid;
+  grid-template-columns: minmax(0, 0.8fr) minmax(280px, 0.85fr);
+  gap: 24px;
+  align-items: start;
+}
+
+.category-head h3 {
+  margin-bottom: 0;
+  font-size: clamp(24px, 2.4vw, 34px);
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.product-card {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto auto;
+  min-height: 330px;
+  padding: 16px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  box-shadow: 0 8px 22px rgba(32, 35, 38, 0.05);
+}
+
+.product-card-top,
+.product-card-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.product-card h3 {
+  margin: 14px 0 12px;
+  font-size: 18px;
+  line-height: 1.22;
+}
+
+.product-card p {
+  margin-bottom: 12px;
+}
+
+.product-specs {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+  align-content: start;
+  margin: 10px 0 18px;
+}
+
+.product-specs span {
+  display: grid;
+  gap: 3px;
+  min-height: 54px;
+  padding: 9px;
+  background: var(--paper);
+  border-radius: 8px;
+  color: #41484d;
+  font-size: 13px;
+}
+
+.product-specs b {
+  color: var(--muted);
+  font-size: 11px;
+  text-transform: uppercase;
+}
+
+.product-card-bottom strong {
+  font-size: 20px;
+  line-height: 1;
+}
+
+.empty-state {
+  padding: 22px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.use-section {
+  background: var(--white);
+}
+
+.use-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.7fr) minmax(0, 1fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.use-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.use-list li {
+  min-height: 132px;
+  padding: 18px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  font-weight: 820;
+}
+
+.contact-page-section {
+  background: var(--white);
+}
+
+.contact-page-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.contact-card {
+  display: grid;
+  align-content: start;
+  gap: 14px;
+  min-height: 320px;
+  padding: 24px;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.contact-card address {
+  font-style: normal;
+}
+
+.contact-stack.dark a {
+  color: var(--ink);
 }
 
 .solution-card {
@@ -693,6 +967,10 @@ address {
   font-style: normal;
 }
 
+.contact-card address {
+  color: var(--muted);
+}
+
 .request-form {
   display: grid;
   gap: 14px;
@@ -744,7 +1022,10 @@ address {
   }
 
   .solutions-grid,
-  .process-list {
+  .process-list,
+  .catalog-group-cards,
+  .product-grid,
+  .use-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -752,12 +1033,19 @@ address {
   .quantity-tool,
   .request-grid,
   .section-head,
-  .intro-grid {
+  .intro-grid,
+  .split-hero-grid,
+  .category-head,
+  .use-grid {
     grid-template-columns: 1fr;
   }
 
   .quantity-controls {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .split-hero-grid img {
+    height: 280px;
   }
 }
 
@@ -799,9 +1087,27 @@ address {
   .intro-points,
   .solutions-grid,
   .price-controls,
+  .catalog-controls,
+  .catalog-group-cards,
+  .product-grid,
+  .product-specs,
+  .use-list,
+  .contact-page-grid,
   .process-list,
   .quantity-controls {
     grid-template-columns: 1fr;
+  }
+
+  .catalog-controls.one-control {
+    grid-template-columns: 1fr;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(36px, 11vw, 44px);
+  }
+
+  .split-hero-grid img {
+    height: 220px;
   }
 
   .solution-card img {

@@ -1,6 +1,6 @@
 (function () {
   const MAIL_TO = "Head-tp@yandex.ru";
-  const PHONE = "+73422077888";
+  const PHONE = "+73422071020";
   const products = Array.isArray(window.TP_PRODUCTS) ? window.TP_PRODUCTS : [];
   const rub = new Intl.NumberFormat("ru-RU", { style: "currency", currency: "RUB", maximumFractionDigits: 0 });
   const numberFmt = new Intl.NumberFormat("ru-RU", { maximumFractionDigits: 1 });
